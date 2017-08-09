@@ -83,13 +83,31 @@ Route::group(['prefix' => 'participants'], function () {
 
 Route::group(['prefix' => 'account'], function(){
 
-			Route::get('/', 'Website\Social\ProfileController@index');
+			Route::get('edit', 'Website\Social\ProfileController@index');
 
-      Route::get('/feed', 'Website\Social\FeedController@index');
+			Route::get('chron', 'Website\Social\ProfileController@chron');
 
-      Route::post('/follow/{id}', 'Ajax\Social\ProfileController@follow');
+			Route::get('balance', 'Website\Social\ProfileController@balance');
 
-			Route::post('/unfollow/{id}', 'Ajax\Social\ProfileController@unfollow');
+			Route::get('feed-settings', 'Website\Social\ProfileController@feed_settings');
+
+			Route::get('blockchain', 'Website\Social\ProfileController@blockchain');
+
+            Route::get('feed', 'Website\Social\FeedController@index');
+
+            Route::group([ 'prefix' => 'create'], function (){
+
+                Route::get('innovation', 'Website\Social\ProfileController@innov');
+
+                Route::get('information', 'Website\Social\ProfileController@inform');
+
+
+            });
+
+
+    Route::post('follow/{id}', 'Ajax\Social\ProfileController@follow');
+
+			Route::post('unfollow/{id}', 'Ajax\Social\ProfileController@unfollow');
 
 });
 

@@ -21,13 +21,13 @@
                   <li class="home"><a href="#"><span></span></a></li>
                   <li><img class="img-responsive user" src="{{asset( $user -> picture -> thumb())}}"/> {{$user -> firstname}}</li>
                   <li>
-                     <a href="{{asset('')}}">{{Lang::get('account.home')}} 
+                     <a href="{{asset('/account/feed')}}">{{Lang::get('account.home')}}
                      @if($user -> new_publications -> count() !== 0)<span>{{$user -> new_publications -> count()}}</span>@endif</a>
                   </li>
                </ul>
                <ul class="nav navbar-nav  hidden-lg hidden-md">
                   <li class="user-name"><img class="img-responsive" src="{{asset( $user -> picture -> thumb())}}"/> {{$user -> firstname}} {{$user -> lastname}}</li>
-                  <li><a href="{{asset('')}}">{{Lang::get('account.home')}} <span>7</span></a></li>
+                  <li><a href="{{asset('account/feed')}}">{{Lang::get('account.home')}} <span>7</span></a></li>
                   <li>
                       @if( strtotime( \Carbon\Carbon::parse( $user -> active_to) -> addMonth() ->toDateTimeString()) > time() )
                         <img class="img-responsive" src="{{ asset('img/icons/active-status.png')}}"/> {{Lang::get('account.active_by')}} 

@@ -57,7 +57,7 @@
 
                         @foreach( $socials as $social)
 
-			<a href="{{$social -> link}}"><img src="{{ asset( 'img/icons/' . $social -> picture -> name )}}"/>{{$social -> name}}</a>
+			<a href="{{$social -> link}}" target="_blank" ><img src="{{ asset( 'img/icons/' . $social -> picture -> name )}}"/>{{$social -> name}}</a>
 
                         @endforeach
 
@@ -203,14 +203,16 @@
             
             
         <!--MOBILE authors-->       
-            
+
             <div class="col-xs-12 hidden-1920 show-820">
                     <div class="find-us col-xs-3">
                         <h3>{{Lang::get('app.find_on_us')}}</h3>
 
                         @foreach( $socials as $social)
 
-<a href="{{$social -> link}}"><img src="{{ asset( 'img/icons/' . $social -> picture -> name )}}"/>{{$social -> name}}</a>
+                    <a href="{{$social -> link}}" target="_blank">
+                        <img src="{{ asset( 'img/icons/' . $social -> picture -> name )}}"/>
+                    {{$social -> name}}</a>
 
                         @endforeach 
                         
