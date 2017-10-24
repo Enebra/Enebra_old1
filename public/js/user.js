@@ -52,5 +52,28 @@ var user = {
 
 		},
 
+		edit    : function ( event ) {
+
+
+
+            $.ajax({
+
+                url 		: '/account/edit',
+
+				data 		: create_request( $('.edit-account-field' ) ),
+
+                method 		: 'POST',
+
+                dataType	: 'JSON',
+
+                success		: function( obj )
+                {
+
+
+                }
+
+            }) ;
+        }
+
 
 };

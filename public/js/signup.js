@@ -112,14 +112,3 @@ var auth = {
 }
 
 
-
-function create_request( fields )
-{
-
-		var data = new Object();
-
-		for(var i = 0; i < fields.length ; i++ )
-			data[fields[i].name] = fields[i].value
-
-	return data; 
-}

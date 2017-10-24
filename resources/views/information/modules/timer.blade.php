@@ -45,7 +45,7 @@
 
                 </div>
                 <div class="timer-style">
-
+ 
                       <span  id="sec" style="display: block;font-size: 33px;"></span>
                       <span>{{Lang::get('timer.sec')}}</span>
                     
@@ -56,8 +56,8 @@
             </div>
          -->
 @else
-        <div class="col-lg-5 col-lg-offet-7 col-md-6 col-md-offset-6 col-sm-12 col-xs-12" style="color: #c0dafe;">
+       <!-- <div class="col-lg-5 col-lg-offet-7 col-md-6 col-md-offset-6 col-sm-12 col-xs-12" style="color: #c0dafe;">
             {{Lang::get('index.not_worked')}}
-        </div>
+        </div> -->
               @endif
 </div>

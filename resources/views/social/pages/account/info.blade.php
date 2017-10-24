@@ -36,7 +36,7 @@
                                         <div class="form-group row">
                                             <label for="ex1" class="col-md-4 col-sm-4 col-xs-4 col-form-label pers100">{{Lang::get('user.lang')}}</label>
                                             <div class="col-md-3 col-sm-3 col-xs-8 pers100 col-form-input no-pad">
-                                                <select class="select" name="lang_id">
+                                                <select class="select edit-account-field" name="lang_id">
                                                      @foreach(\App\Models\Language::all() as $lang )
                                                         <option value="{{$lang -> id}}" {{ $lang -> id == $user -> language_id ? 'selected' : '' }} >{{$lang -> title}}</option>
                                                      @endforeach
@@ -46,7 +46,7 @@
                                         <div class="form-group row">
                                             <label for="ex1" class="col-md-4 col-sm-4 col-xs-4 pers100 col-form-label">{{Lang::get('user.nationality')}}</label>
                                             <div class="col-md-3 col-sm-3 col-xs-8 pers100 col-form-input no-pad">
-                                                <select class="select" name="nationality">
+                                                <select class="select edit-account-field" name="nationality">
                                                     @foreach(\App\Models\Country::all() as $country )
                                                         <option value="{{$country -> id}}" {{ $country -> id == $user -> nationality ? 'selected' : '' }} >{{$country -> country}}</option>
                                                     @endforeach
@@ -56,7 +56,7 @@
                                         <div class="form-group row">
                                             <label for="ex1" class="col-md-4 col-sm-4 col-xs-4 pers100 col-form-label">{{Lang::get('user.country')}}</label>
                                             <div class="col-md-3 col-sm-3 col-xs-8 pers100 col-form-input no-pad">
-                                                <select class="select" name="country">
+                                                <select class="select edit-account-field" name="country">
                                                     @foreach(\App\Models\Country::all() as $country )
                                                         <option value="{{$country -> id}}" {{ $country -> id == $user -> country ? 'selected' : '' }} >{{$country -> country}}</option>
                                                     @endforeach
@@ -66,31 +66,37 @@
                                         <div class="form-group row">
                                             <label for="ex1" class="col-md-4 col-sm-4 col-xs-4 pers100 col-form-label">{{Lang::get('user.birthday')}}</label>
                                             <div class="col-md-3 col-sm-3 col-xs-8 pers100 col-form-input no-pad">
-                                                <div class="col-md-3 col-sm-3 col-xs-3 no-pad pad-right"><input class="form-control" type="number" value="{{$user -> birthday}}" id="ex1"></div>
-                                                <div class="col-md-5 col-sm-5 col-xs-5 no-pad pad-right"><input class="form-control" type="number" value="{{$user -> birthmonth}}" id="ex1"></div>
-                                                <div class="col-md-4 col-sm-4 col-xs-4 no-pad"><input class="form-control" type="number" value="{{$user -> birthyear}}" id="ex1"></div>
+                                                <div class="col-md-3 col-sm-3 col-xs-3 no-pad pad-right">
+                                                    <input class="form-control edit-account-field" name="birthday" type="number" value="{{$user -> birthday}}" id="ex1">
+                                                </div>
+                                                <div class="col-md-5 col-sm-5 col-xs-5 no-pad pad-right">
+                                                    <input class="form-control edit-account-field" name="birthmonth" type="number" value="{{$user -> birthmonth}}" id="ex1">
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-4 no-pad">
+                                                    <input class="form-control edit-account-field" name="birthyear" type="number" value="{{$user -> birthyear}}" id="ex1">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="form-group row surname-block">
                                             <label for="ex1" class="col-md-4 col-sm-4 col-xs-4 pers100 col-form-label">{{Lang::get('user.lastname')}}</label>
                                             <div class="col-md-3 col-sm-3 col-xs-4 pers100 col-form-input no-pad pad-right">
                                                 <div class="langbl">{{Lang::get('user.from_u_lang')}}</div>
-                                                <input class="form-control" type="text" name="lastname" value="{{$user -> lastname}}" id="ex1">
+                                                <input class="form-control edit-account-field" type="text" name="lastname" value="{{$user -> lastname}}" id="ex1">
                                             </div>
                                             <div class="col-md-3 col-sm-3 col-xs-4 pers100 col-form-input no-pad">
                                                 <div class="langbl">{{Lang::get('user.from_lat')}}</div>
-                                                <input class="form-control" type="text" name="lastname_en" value="{{$user -> lastname_en}}" id="ex1">
+                                                <input class="form-control edit-account-field" type="text" name="lastname_en" value="{{$user -> lastname_en}}" id="ex1">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="ex1" class="col-md-4 col-sm-4 col-xs-4 pers100 col-form-label">{{Lang::get('user.firstname')}}</label>
                                             <div class="col-md-3 col-sm-3 col-xs-4 pers100 col-form-input no-pad pad-right">
                                                 <div class="langbl hide-big show-600">{{Lang::get('user.from_u_lang')}}</div>
-                                                <input class="form-control" type="text" name="firstname" value="{{$user -> firstname}}" id="ex1">
+                                                <input class="form-control edit-account-field" type="text" name="firstname" value="{{$user -> firstname}}" id="ex1">
                                             </div>
                                             <div class="col-md-3 col-sm-3 col-xs-4 pers100 col-form-input no-pad">
                                                 <div class="langbl hide-big show-600">{{Lang::get('user.from_lat')}}</div>
-                                                <input class="form-control" type="text" name="firstname_en" value="{{$user -> firstname_en}}" id="ex1">
+                                                <input class="form-control edit-account-field" type="text" name="firstname_en" value="{{$user -> firstname_en}}" id="ex1">
                                             </div>
                                         </div>
                                         <!--<div class="form-group row">
@@ -102,7 +108,7 @@
                                         <div class="form-group row">
                                             <label for="ex1" class="col-md-4 col-sm-4 col-xs-4 pers100 col-form-label">{{Lang::get('user.sex')}}</label>
                                             <div class="col-md-3 col-sm-3 col-xs-8 pers100 col-form-input no-pad">
-                                                <select class="select" name="sex">
+                                                <select class="select edit-account-field" name="sex">
                                                         @for( $i = 1; $i < 3; $i++)
                                                             <option value="{{$i}}" {{ $i == $user -> sex ? 'selected' : '' }} >{{Lang::get('app.sex.' . $i)}}</option>
                                                         @endfor
@@ -119,7 +125,7 @@
                                         <div class="form-group row">
                                             <label for="ex1" class="col-md-4 col-sm-4 col-xs-6 pers100 col-form-label">{{Lang::get('user.document')}}</label>
                                             <div class="col-md-3 col-sm-3 col-xs-6 pers100 col-form-input no-pad">
-                                                <select class="select" name="document_id">
+                                                <select class="select edit-account-field" name="document_id">
                                                     @foreach(\App\Models\Document::get_ids() as $doc)
                                                         <option value="{{$doc -> id}}" {{ $doc -> id == $user -> document_id ? 'selected' : '' }} >{{Lang::get('documents.' . $doc -> id )}}</option>
                                                     @endforeach
@@ -129,19 +135,25 @@
                                         <div class="form-group row">
                                             <label for="ex1" class="col-md-4 col-sm-4 col-xs-4 pers100 col-form-label">{{Lang::get('user.doc_number')}}</label>
                                             <div class="col-md-3 col-sm-3 col-xs-8 pers100 col-form-input no-pad">
-                                                <input class="form-control" type="text" name="document" value="{{$user -> document}}" id="ex1">
+                                                <input class="form-control edit-account-field" type="text" name="document" value="{{$user -> document}}" id="ex1">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="ex1" class="col-md-4 col-sm-4 col-xs-4 pers100 col-form-label">{{Lang::get('user.doc_date')}}</label>
                                             <div class="col-md-3 col-sm-3 col-xs-8 pers100 col-form-input no-pad">
-                                                <div class="col-md-3 col-sm-3 col-xs-3 no-pad pad-right"><input class="form-control" type="number" value="{{$user -> dateday}}" id="ex1"></div>
-                                                <div class="col-md-5 col-sm-5 col-xs-5 no-pad pad-right"><input class="form-control" type="number" value="{{$user -> datemonth}}" id="ex1"></div>
-                                                <div class="col-md-4 col-sm-4 col-xs-4 no-pad"><input class="form-control" type="number" value="{{$user -> dateyear}}" id="ex1"></div>
+                                                <div class="col-md-3 col-sm-3 col-xs-3 no-pad pad-right">
+                                                    <input class="form-control edit-account-field" type="number" name="dateday" value="{{$user -> dateday}}" id="ex1">
+                                                </div>
+                                                <div class="col-md-5 col-sm-5 col-xs-5 no-pad pad-right">
+                                                    <input class="form-control edit-account-field" type="number" name="datemonth" value="{{$user -> datemonth}}" id="ex1">
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-4 no-pad">
+                                                    <input class="form-control edit-account-field" type="number" name="dateyear" value="{{$user -> dateyear}}" id="ex1">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="form_buttons">
-                                            <button type="button" class="">{{Lang::get('account.save')}}</button>
+                                            <button type="button" onclick="user.edit(this)" class="">{{Lang::get('account.save')}}</button>
                                         </div>
                                     </form>
                                 </div>
@@ -412,11 +424,17 @@
                                             <select class="select" id="ui-id-8" style="display: none;">
                                                 <option>Мобильный</option>
                                             </select>
-                                            <span tabindex="0" id="ui-id-8-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="ui-id-8-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget"><span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span><span class="ui-selectmenu-text">Мобильный</span></span>
+                                            <span tabindex="0" id="ui-id-8-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="ui-id-8-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget">
+                                                <span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span>
+                                                <span class="ui-selectmenu-text">Мобильный</span>
+                                            </span>
                                             <select class="select cust_width" id="ui-id-9" style="display: none;">
                                                 <option>Украина (+380)</option>
                                             </select>
-                                            <span tabindex="0" id="ui-id-9-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="ui-id-9-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget"><span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span><span class="ui-selectmenu-text">Украина (+380)</span></span>
+                                            <span tabindex="0" id="ui-id-9-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="ui-id-9-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget">
+                                                <span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span>
+                                                <span class="ui-selectmenu-text">Украина (+380)</span>
+                                            </span>
                                             <div class="dropdown drop_settings">
                                                 <input class="form-control cust_width" type="text">
                                                 <div class="drop_privacy" data-toggle="dropdown" aria-hidden="true">

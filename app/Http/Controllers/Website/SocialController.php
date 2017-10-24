@@ -13,6 +13,7 @@ abstract class SocialController extends WebsiteController
 {
 
 	const REDIRECT_ERROR  = '/';
+	
     public function __construct()
 	{
 

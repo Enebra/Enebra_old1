@@ -83,7 +83,14 @@ Route::group(['prefix' => 'participants'], function () {
 
 Route::group(['prefix' => 'account'], function(){
 
-			Route::get('edit', 'Website\Social\ProfileController@index');
+            Route::group([ 'prefix' => 'edit'], function (){
+                
+                Route::get('', 'Website\Social\ProfileController@index');
+
+                Route::post('', 'Ajax\Social\ProfileController@index');
+
+            });
+
 
 			Route::get('chron', 'Website\Social\ProfileController@chron');
 

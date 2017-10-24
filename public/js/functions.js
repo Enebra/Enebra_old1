@@ -32,7 +32,7 @@ $( document ).ready(function() {
             $(bl).find('.block-on-hover p').hide();
         });
 
-//гавнокод :) для Івана  ///
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ :) пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ  ///
    
 
   if ($(window).width() > 820 ) { 
@@ -58,8 +58,6 @@ $( document ).ready(function() {
 
 } 
 
-//гавнокод :) для Івана///
- 
  
  
     
@@ -157,6 +155,17 @@ $('.full-partcipant').each(function(){
 
 
 });
+
+function create_request( fields )
+{
+
+    var data = new Object();
+
+    for(var i = 0; i < fields.length ; i++ )
+        data[fields[i].name] = fields[i].value
+
+    return data;
+}
 
 function scroll_to( id )
 {
